@@ -3,13 +3,22 @@ package com.veryrandomcreator.scribblenotes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.Objects;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
 
 /*
 Sources:
@@ -25,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton cancelBtn;
     private FloatingActionButton deleteBtn;
     private FloatingActionButton saveBtn;
+    private String fileName; // includes extension
+
+    public static final String FILE_CONTENTS_DELIMITER = "\n";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         optionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibrate();
                 if (areOptionsVisible) {
                     cancelBtn.setVisibility(View.INVISIBLE);
                     deleteBtn.setVisibility(View.INVISIBLE);
@@ -61,5 +74,63 @@ public class MainActivity extends AppCompatActivity {
                 areOptionsVisible = !areOptionsVisible;
             }
         });
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCancelBtnClick();
+            }
+        });
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onDeleteBtnClick();
+            }
+        });
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSaveBtnClick();
+            }
+        });
+    }
+
+    public void onCancelBtnClick() {
+        vibrate();
+        //exit activity
+    }
+
+    public void onDeleteBtnClick() {
+        vibrate();
+    }
+
+    //https://developer.android.com/training/data-storage/app-specific#java
+    public void onSaveBtnClick( ) {
+        vibrate();
+        File file = new File(getFilesDir(), fileName);
+        try (FileOutputStream outputStream = new FileOutputStream(file)) {
+            outputStream.write(fileNameEdtTxt.getText().toString().getBytes());
+            outputStream.write(FILE_CONTENTS_DELIMITER.getBytes());
+            outputStream.write(noteEdtTxt.getText().toString().getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sendToast("File Saved!");
+    }
+
+    /**
+     * A method to vibrate the device
+     */
+    public void vibrate() {
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE); // Retrieves the vibrator service
+        vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)); // Vibrates the device at the default amplitude for 100 milliseconds
+    }
+
+    /**
+     * A method to send a toast
+     *
+     * @param text The text to display in the toast
+     */
+    public void sendToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show(); // Creates a toast with the specified text
     }
 }
