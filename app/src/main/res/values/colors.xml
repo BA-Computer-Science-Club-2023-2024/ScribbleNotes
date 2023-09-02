@@ -10,4 +10,5 @@
     <color name="bright_yellow">#FFE6D332</color>
     <color name="dark_yellow">#FFFFCD05</color>
     <color name="soft_black">#FF1C1818</color>
+    <color name="grey">#C8C8C8</color>
 </resources>

@@ -1,21 +1,23 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Theme.ScribbleNotes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/bright_yellow</item>
+        <item name="colorPrimaryVariant">@color/dark_yellow</item>
         <item name="colorOnPrimary">@color/soft_black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/bright_yellow</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+
+        <!--        Making the secondary colors the same for simplicity-->
+        <item name="colorSecondary">?attr/colorPrimary</item>
+        <item name="colorSecondaryVariant">?attr/colorPrimaryVariant</item>
+        <item name="colorOnSecondary">?attr/colorOnPrimary</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+
+        <item name="cardBackgroundColor">?attr/colorPrimary</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
+
+        <item name="backgroundColor">@color/soft_black</item>
+        <item name="colorOnBackground">@color/white</item>
+
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
-        <!-- Customize your theme here. -->
     </style>
-  <!-- Base application theme. -->
     <style name="Base.Theme.ScribbleNotes" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 </resources>

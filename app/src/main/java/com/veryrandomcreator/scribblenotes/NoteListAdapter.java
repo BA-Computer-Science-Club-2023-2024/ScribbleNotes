@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * The adapter for {@link R.id#notesLst}. Supplies the list with the data to display
  * <p>
- * The following code contains examples found on the <a href="https://developer.android.com/reference/android/widget/ListView">Android Developer Website</a>.
+ * The following code contains snippets found on the <a href="https://developer.android.com/reference/android/widget/ListView">Android Developer Website</a>.
  * For more information about using ListView, and the better alternative, RecyclerView, visit the developer website
  */
 public class NoteListAdapter extends BaseAdapter {
@@ -77,7 +77,6 @@ public class NoteListAdapter extends BaseAdapter {
      *        always of the right type (see {@link #getViewTypeCount()} and
      *        {@link #getItemViewType(int)}).
      * @param parent The parent that this view will eventually be attached to
-     * @return
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
