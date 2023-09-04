@@ -80,7 +80,6 @@ public class NotificationService extends Service {
             notificationManager.createNotificationChannel(new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Scribble Notes Notification Channel", NotificationManager.IMPORTANCE_LOW)); // The channel for the notification
 
             Intent startActivityIntent = new Intent(this, MainActivity.class); // The intent to start the app
-
             NotificationCompat.Builder serverNotificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID) // Sets the channel for the notification
                     .setSmallIcon(R.drawable.ic_notifications_on) // Sets the notification icon
                     .setContentTitle("Create new note") // Sets the notification title
