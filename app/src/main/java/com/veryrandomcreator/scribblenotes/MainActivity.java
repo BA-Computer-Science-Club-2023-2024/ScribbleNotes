@@ -114,8 +114,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public boolean hasPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Ensures API is at level required to access the POST_NOTIFICATIONS permission check
-            int result = ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS); // Checks if the app has notification permission
-            if (result != PackageManager.PERMISSION_GRANTED) { // Checks if permission has been granted
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) { // Checks if permission has been granted
                 requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS); // If the permission has not been granted, request permission launcher is launched
                 return false; // Does not currently have permission
             }
