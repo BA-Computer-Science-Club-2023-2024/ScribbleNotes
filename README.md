@@ -2,6 +2,8 @@
 
 `Disclaimer: ScribbleNotes is not intended for practical use. It serves as an example/tutorial app to guide tutorials in the BA Computer Science Club. Certain functionality that could improve efficency is omitted to make the code less intimidating for new learners.`
 
+This basic note creator allows users to quickly create and edit notes. ScribbleNotes also has an optional always-active notification to quickly open the app from anywhere on the device.
+
 ## Contact
 
 For visitors from the Play Store with questions or concerns about the app, email `veryrandomcreator@gmail.com`. For code/club-related questions, talk to one of the club leaders in-person.
