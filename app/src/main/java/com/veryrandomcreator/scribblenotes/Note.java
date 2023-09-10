@@ -117,7 +117,7 @@ public class Note {
             StringBuilder content = new StringBuilder(); // StringBuilder to append the rest of the contents, except title
             for (int i = 0; i < fileContent.split(DELIMITER).length; i++) {
                 if (i != 0) {
-                    content.append(fileContent.split(DELIMITER)[i]); // Appends the rest of the contents, except title
+                    content.append(fileContent.split(DELIMITER)[i]).append(i != fileContent.split(DELIMITER).length - 1 ? "\n" : ""); // Appends the rest of the contents, except title
                 }
             }
             this.title = title; // Initializes title
