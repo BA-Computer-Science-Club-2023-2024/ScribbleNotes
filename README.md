@@ -16,7 +16,7 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 
 ## Specifics  
 
-<a href="https://play.google.com/store/apps/details?id=com.veryrandomcreator.scribblenotes"><img src="https://img.shields.io/badge/Latest%20Release-MONTH%20NUM%2C%202023-yellow"></a>  <img src="https://img.shields.io/badge/Version-1.0.0-green">  <a href="https://github.com/BA-Computer-Science-Club-2023-2024/ScribbleNotes/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT%20License-blue"></a>
+<a href="https://play.google.com/store/apps/details?id=com.veryrandomcreator.scribblenotes"><img src="https://img.shields.io/badge/Latest%20Release-SEPT%2010%2C%202023-yellow"></a>  <img src="https://img.shields.io/badge/Version-1.0.0-green">  <a href="https://github.com/BA-Computer-Science-Club-2023-2024/ScribbleNotes/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT%20License-blue"></a>
 
 <img src="https://img.shields.io/badge/Target%20API%20Level-API%2033%20(Android%20Tiramisu)-red">  <img src="https://img.shields.io/badge/Minimum%20API%20Level-API%2027%20(Android%208.1)-orange">
 
